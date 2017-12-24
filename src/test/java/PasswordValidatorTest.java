@@ -6,8 +6,11 @@ import org.junit.Test;
 public class PasswordValidatorTest {
 
 	@Test
-	public void renameMe() {
-		assertTrue(true);
+	public void should_validate_a_correct_password() {
+        String password = "Aa_123456";
+        PasswordValidator validator = new PasswordValidator();
+
+        assertTrue(validator.validate(password));
 	}
 
 }
