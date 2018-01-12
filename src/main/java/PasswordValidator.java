@@ -2,12 +2,11 @@ import java.util.Objects;
 
 class PasswordValidator {
 
-    Boolean validate(String password) {
+    Boolean isValid(String password) {
         return hasUpperCase(password)
                 && hasLowerCase(password)
                 && hasUnderScore(password)
-                && isLongEnough(password)
-                ;
+                && isLongEnough(password);
     }
 
     private boolean isLongEnough(String password) {

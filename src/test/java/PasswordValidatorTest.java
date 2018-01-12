@@ -11,38 +11,28 @@ public class PasswordValidatorTest {
         validator = new PasswordValidator();
     }
 
-	@Test
-	public void should_validate_a_correct_password() {
-        String password = "Aa_123456";
-
-        assertTrue(validator.validate(password));
-	}
-
     @Test
-    public void should_fail_when_no_capital_letter() {
-        String password = "aa_123456";
-
-        assertFalse(validator.validate(password));
+    public void valid_password() {
+        assertTrue(validator.isValid("Aa_123456"));
     }
 
     @Test
-    public void should_fail_when_no_lower_case() {
-        String password = "AA_123456";
-
-        assertFalse(validator.validate(password));
+    public void invalid_when_no_capital_letter() {
+        assertFalse(validator.isValid("aa_123456"));
     }
 
     @Test
-    public void should_fail_when_no_underscore() {
-        String password = "Aa0123456";
-
-        assertFalse(validator.validate(password));
+    public void invalid_when_no_lower_case_letter() {
+        assertFalse(validator.isValid("AA_123456"));
     }
 
     @Test
-    public void should_fail_when_no_long_enough() {
-        String password = "Aa_12345";
+    public void invalid_when_no_underscore_character() {
+        assertFalse(validator.isValid("Aa0123456"));
+    }
 
-        assertFalse(validator.validate(password));
+    @Test
+    public void invalid_when_no_long_enough() {
+        assertFalse(validator.isValid("Aa_12345"));
     }
 }
