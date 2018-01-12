@@ -6,8 +6,12 @@ class PasswordValidator {
         return hasUpperCase(password)
                 && hasLowerCase(password)
                 && hasUnderScore(password)
-                && password.length() >= 9
+                && isLongEnough(password)
                 ;
+    }
+
+    private boolean isLongEnough(String password) {
+        return password.length() >= 9;
     }
 
     private boolean hasUnderScore(String password) {
