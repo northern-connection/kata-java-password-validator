@@ -31,4 +31,11 @@ public class PasswordValidatorTest {
 
         assertFalse(validator.validate(password));
     }
+
+    @Test
+    public void should_fail_when_no_underscore() {
+        String password = "Aa0123456";
+
+        assertFalse(validator.validate(password));
+    }
 }
