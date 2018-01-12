@@ -6,6 +6,7 @@ class PasswordValidator {
         return hasUpperCase(password)
                 && hasLowerCase(password)
                 && hasUnderScore(password)
+                && password.length() >= 9
                 ;
     }
 

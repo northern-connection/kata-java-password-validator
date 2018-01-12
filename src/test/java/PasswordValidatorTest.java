@@ -38,4 +38,11 @@ public class PasswordValidatorTest {
 
         assertFalse(validator.validate(password));
     }
+
+    @Test
+    public void should_fail_when_no_long_enough() {
+        String password = "Aa_12345";
+
+        assertFalse(validator.validate(password));
+    }
 }
