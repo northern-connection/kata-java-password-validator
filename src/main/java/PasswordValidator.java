@@ -5,8 +5,12 @@ class PasswordValidator {
     Boolean validate(String password) {
         return hasUpperCase(password)
                 && hasLowerCase(password)
-                && password.indexOf('_') != -1
+                && hasUnderScore(password)
                 ;
+    }
+
+    private boolean hasUnderScore(String password) {
+        return password.indexOf('_') != -1;
     }
 
     private boolean hasLowerCase(String password) {
