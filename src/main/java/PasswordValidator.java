@@ -10,7 +10,7 @@ class PasswordValidator {
     }
 
     private boolean isLongEnough(String password) {
-        return password.length() >= 9;
+        return password.length() > 8;
     }
 
     private boolean hasUnderScore(String password) {
@@ -25,4 +25,3 @@ class PasswordValidator {
         return !Objects.equals(password.toLowerCase(), password);
     }
 }
-
