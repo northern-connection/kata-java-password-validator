@@ -18,10 +18,10 @@ class PasswordValidator {
     }
 
     private boolean hasLowerCase(String password) {
-        return !Objects.equals(password.toUpperCase(), password);
+        return !password.toUpperCase().equals(password);
     }
 
     private boolean hasUpperCase(String password) {
-        return !Objects.equals(password.toLowerCase(), password);
+        return !password.toLowerCase().equals(password);
     }
 }
